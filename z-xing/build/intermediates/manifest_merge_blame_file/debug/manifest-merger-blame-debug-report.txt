@@ -1,0 +1,353 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<!--
+3 Copyright (C) 2008 ZXing authors
+4
+5 Licensed under the Apache License, Version 2.0 (the "License");
+6 you may not use this file except in compliance with the License.
+7 You may obtain a copy of the License at
+8
+9      http://www.apache.org/licenses/LICENSE-2.0
+10
+11 Unless required by applicable law or agreed to in writing, software
+12 distributed under the License is distributed on an "AS IS" BASIS,
+13 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+14 See the License for the specific language governing permissions and
+15 limitations under the License.
+16-->
+17<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+18    package="com.google.zxing.client.android"
+19    android:installLocation="auto"
+20    android:versionCode="108"
+21    android:versionName="4.7.8" >
+22
+23    <uses-sdk
+23-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:34:3-71
+24        android:minSdkVersion="19"
+24-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:34:13-39
+25        android:targetSdkVersion="22" />
+25-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:34:40-69
+26
+27    <uses-permission android:name="android.permission.CAMERA" />
+27-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:23:3-62
+27-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:23:20-60
+28    <uses-permission android:name="android.permission.INTERNET" />
+28-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:24:3-64
+28-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:24:20-62
+29    <uses-permission android:name="android.permission.VIBRATE" />
+29-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:25:3-63
+29-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:25:20-61
+30    <uses-permission android:name="android.permission.FLASHLIGHT" />
+30-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:26:3-66
+30-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:26:20-64
+31    <uses-permission android:name="android.permission.READ_CONTACTS" />
+31-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:27:3-69
+31-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:27:20-67
+32    <!-- unavailable in API 23 -->
+33    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" />
+33-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:29:3-90
+33-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:29:20-88
+34    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+34-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:30:3-78
+34-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:30:20-76
+35    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+35-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:31:3-73
+35-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:31:20-71
+36    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+36-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:32:3-73
+36-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:32:20-71
+37
+38    <uses-feature android:name="android.hardware.camera.any" />
+38-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:36:3-61
+38-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:36:17-59
+39    <uses-feature
+39-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:37:3-92
+40        android:name="android.hardware.camera.autofocus"
+40-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:37:17-65
+41        android:required="false" />
+41-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:37:66-90
+42    <uses-feature
+42-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:38:3-88
+43        android:name="android.hardware.camera.flash"
+43-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:38:17-61
+44        android:required="false" />
+44-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:38:62-86
+45    <uses-feature android:name="android.hardware.screen.landscape" />
+45-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:39:3-67
+45-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:39:17-65
+46    <uses-feature
+46-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:40:3-80
+47        android:name="android.hardware.wifi"
+47-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:40:17-53
+48        android:required="false" />
+48-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:40:54-78
+49
+50    <application
+50-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:42:3-141:17
+51        android:allowBackup="true"
+51-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:45:16-42
+52        android:debuggable="true"
+53        android:icon="@drawable/launcher_icon"
+53-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:42:16-54
+54        android:label="@string/app_name"
+54-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:44:16-48
+55        android:logo="@drawable/launcher_icon" >
+55-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:43:16-54
+56        <activity
+56-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:46:5-88:16
+57            android:name="com.google.zxing.client.android.CaptureActivity"
+57-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:46:15-46
+58            android:clearTaskOnLaunch="true"
+58-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:48:15-47
+59            android:screenOrientation="sensorLandscape"
+59-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:47:15-58
+60            android:stateNotNeeded="true"
+60-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:49:15-44
+61            android:theme="@style/CaptureTheme"
+61-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:50:15-50
+62            android:windowSoftInputMode="stateAlwaysHidden" >
+62-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:51:15-62
+63            <intent-filter>
+63-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:52:7-55:23
+64                <action android:name="android.intent.action.MAIN" />
+64-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:53:9-60
+64-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:53:17-58
+65
+66                <category android:name="android.intent.category.LAUNCHER" />
+66-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:54:9-68
+66-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:54:19-66
+67            </intent-filter>
+68            <intent-filter>
+68-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:56:7-59:23
+69                <action android:name="com.google.zxing.client.android.SCAN" />
+69-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:57:9-70
+69-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:57:17-68
+70
+71                <category android:name="android.intent.category.DEFAULT" />
+71-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:58:9-67
+71-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:58:19-65
+72            </intent-filter>
+73            <!-- Allow web apps to launch Barcode Scanner by linking to http://zxing.appspot.com/scan. -->
+74            <intent-filter>
+74-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:61:7-66:23
+75                <action android:name="android.intent.action.VIEW" />
+75-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:62:9-60
+75-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:62:17-58
+76
+77                <category android:name="android.intent.category.DEFAULT" />
+77-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:58:9-67
+77-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:58:19-65
+78                <category android:name="android.intent.category.BROWSABLE" />
+78-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:64:9-69
+78-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:64:19-67
+79
+80                <data
+80-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:65:9-92
+81                    android:host="zxing.appspot.com"
+81-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:65:37-69
+82                    android:path="/scan"
+82-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:65:70-90
+83                    android:scheme="http" />
+83-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:65:15-36
+84            </intent-filter>
+85            <!-- We also support a Google Product Search URL. -->
+86            <intent-filter>
+86-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:68:7-73:23
+87                <action android:name="android.intent.action.VIEW" />
+87-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:62:9-60
+87-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:62:17-58
+88
+89                <category android:name="android.intent.category.DEFAULT" />
+89-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:58:9-67
+89-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:58:19-65
+90                <category android:name="android.intent.category.BROWSABLE" />
+90-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:64:9-69
+90-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:64:19-67
+91
+92                <data
+92-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:65:9-92
+93                    android:host="www.google.com"
+93-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:65:37-69
+94                    android:path="/m/products/scan"
+94-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:65:70-90
+95                    android:scheme="http" />
+95-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:65:15-36
+96            </intent-filter>
+97            <!-- And the UK version. -->
+98            <intent-filter>
+98-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:75:7-80:23
+99                <action android:name="android.intent.action.VIEW" />
+99-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:62:9-60
+99-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:62:17-58
+100
+101                <category android:name="android.intent.category.DEFAULT" />
+101-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:58:9-67
+101-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:58:19-65
+102                <category android:name="android.intent.category.BROWSABLE" />
+102-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:64:9-69
+102-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:64:19-67
+103
+104                <data
+104-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:65:9-92
+105                    android:host="www.google.co.uk"
+105-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:65:37-69
+106                    android:path="/m/products/scan"
+106-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:65:70-90
+107                    android:scheme="http" />
+107-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:65:15-36
+108            </intent-filter>
+109            <!-- Support zxing://scan/?... like iPhone app -->
+110            <intent-filter>
+110-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:82:7-87:23
+111                <action android:name="android.intent.action.VIEW" />
+111-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:62:9-60
+111-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:62:17-58
+112
+113                <category android:name="android.intent.category.DEFAULT" />
+113-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:58:9-67
+113-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:58:19-65
+114                <category android:name="android.intent.category.BROWSABLE" />
+114-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:64:9-69
+114-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:64:19-67
+115
+116                <data
+116-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:65:9-92
+117                    android:host="scan"
+117-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:65:37-69
+118                    android:path="/"
+118-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:65:70-90
+119                    android:scheme="zxing" />
+119-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:65:15-36
+120            </intent-filter>
+121        </activity>
+122        <activity
+122-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:89:5-91:46
+123            android:name="com.google.zxing.client.android.PreferencesActivity"
+123-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:89:15-50
+124            android:label="@string/preferences_name"
+124-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:90:15-55
+125            android:stateNotNeeded="true" />
+125-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:91:15-44
+126        <activity
+126-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:92:5-110:16
+127            android:name="com.google.zxing.client.android.encode.EncodeActivity"
+127-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:92:15-52
+128            android:stateNotNeeded="true" >
+128-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:93:15-44
+129            <intent-filter>
+129-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:94:7-97:23
+130                <action android:name="com.google.zxing.client.android.ENCODE" />
+130-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:95:9-72
+130-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:95:17-70
+131
+132                <category android:name="android.intent.category.DEFAULT" />
+132-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:58:9-67
+132-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:58:19-65
+133            </intent-filter>
+134            <!-- This allows us to handle the Share button in Contacts. -->
+135            <intent-filter>
+135-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:99:7-103:23
+136                <action android:name="android.intent.action.SEND" />
+136-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:100:9-60
+136-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:100:17-58
+137
+138                <category android:name="android.intent.category.DEFAULT" />
+138-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:58:9-67
+138-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:58:19-65
+139
+140                <data android:mimeType="text/x-vcard" />
+140-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:65:9-92
+140-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:102:15-46
+141            </intent-filter>
+142            <!-- This allows us to handle sharing any plain text . -->
+143            <intent-filter>
+143-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:105:7-109:23
+144                <action android:name="android.intent.action.SEND" />
+144-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:100:9-60
+144-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:100:17-58
+145
+146                <category android:name="android.intent.category.DEFAULT" />
+146-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:58:9-67
+146-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:58:19-65
+147
+148                <data android:mimeType="text/plain" />
+148-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:65:9-92
+148-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:102:15-46
+149            </intent-filter>
+150        </activity>
+151        <activity
+151-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:111:5-119:16
+152            android:name="com.google.zxing.client.android.book.SearchBookContentsActivity"
+152-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:111:15-62
+153            android:label="@string/sbc_name"
+153-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:112:15-47
+154            android:screenOrientation="sensorLandscape"
+154-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:114:15-58
+155            android:stateNotNeeded="true" >
+155-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:113:15-44
+156            <intent-filter>
+156-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:115:7-118:23
+157                <action android:name="com.google.zxing.client.android.SEARCH_BOOK_CONTENTS" />
+157-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:116:9-86
+157-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:116:17-84
+158
+159                <category android:name="android.intent.category.DEFAULT" />
+159-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:58:9-67
+159-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:58:19-65
+160            </intent-filter>
+161        </activity>
+162        <activity
+162-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:120:5-127:16
+163            android:name="com.google.zxing.client.android.share.ShareActivity"
+163-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:120:15-50
+164            android:screenOrientation="user"
+164-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:122:15-47
+165            android:stateNotNeeded="true" >
+165-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:121:15-44
+166            <intent-filter>
+166-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:123:7-126:23
+167                <action android:name="com.google.zxing.client.android.SHARE" />
+167-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:124:9-71
+167-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:124:17-69
+168
+169                <category android:name="android.intent.category.DEFAULT" />
+169-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:58:9-67
+169-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:58:19-65
+170            </intent-filter>
+171        </activity>
+172        <activity
+172-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:128:5-130:46
+173            android:name="com.google.zxing.client.android.history.HistoryActivity"
+173-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:128:15-54
+174            android:label="@string/history_title"
+174-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:129:15-52
+175            android:stateNotNeeded="true" />
+175-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:130:15-44
+176        <activity
+176-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:131:5-133:46
+177            android:name="com.google.zxing.client.android.share.BookmarkPickerActivity"
+177-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:131:15-59
+178            android:label="@string/bookmark_picker_name"
+178-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:132:15-59
+179            android:stateNotNeeded="true" />
+179-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:133:15-44
+180        <activity
+180-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:134:5-136:46
+181            android:name="com.google.zxing.client.android.share.AppPickerActivity"
+181-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:134:15-54
+182            android:label="@string/app_picker_name"
+182-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:135:15-54
+183            android:stateNotNeeded="true" />
+183-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:136:15-44
+184        <activity
+184-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:137:5-140:46
+185            android:name="com.google.zxing.client.android.HelpActivity"
+185-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:137:15-43
+186            android:label="@string/menu_help"
+186-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:138:15-48
+187            android:screenOrientation="user"
+187-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:139:15-47
+188            android:stateNotNeeded="true" />
+188-->D:\workspace\code\android\202005\z-xing\src\main\AndroidManifest.xml:140:15-44
+189    </application>
+190
+191</manifest>
