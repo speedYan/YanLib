@@ -23,9 +23,12 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.Rect;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -57,6 +60,9 @@ public final class ViewfinderView extends View {
   private List<ResultPoint> possibleResultPoints;
   private List<ResultPoint> lastPossibleResultPoints;
 
+  private final int SCAN_VELOCITY = 15;
+  private int scanLineTop = 0;
+
   // This constructor is used when the class is built from an XML resource.
   public ViewfinderView(Context context, AttributeSet attrs) {
     super(context, attrs);
@@ -67,7 +73,7 @@ public final class ViewfinderView extends View {
     maskColor = resources.getColor(R.color.viewfinder_mask);
     resultColor = resources.getColor(R.color.result_view);
     laserColor = resources.getColor(R.color.viewfinder_laser);
-    resultPointColor = resources.getColor(R.color.possible_result_points);
+    resultPointColor = resources.getColor(R.color.transparent);
     scannerAlpha = 0;
     possibleResultPoints = new ArrayList<>(5);
     lastPossibleResultPoints = null;
@@ -104,12 +110,28 @@ public final class ViewfinderView extends View {
       canvas.drawBitmap(resultBitmap, null, frame, paint);
     } else {
 
-      // Draw a red "laser scanner" line through the middle to show decoding is active
+/*      // Draw a red "laser scanner" line through the middle to show decoding is active
       paint.setColor(laserColor);
       paint.setAlpha(SCANNER_ALPHA[scannerAlpha]);
       scannerAlpha = (scannerAlpha + 1) % SCANNER_ALPHA.length;
       int middle = frame.height() / 2 + frame.top;
-      canvas.drawRect(frame.left + 2, middle - 1, frame.right - 1, middle + 2, paint);
+      canvas.drawRect(frame.left + 2, middle - 1, frame.right - 1, middle + 2, paint);*/
+
+      //自定义激光线
+      if (scanLineTop == 0) {
+        scanLineTop = frame.top;
+      }
+
+      if (scanLineTop >= frame.bottom - 30) {
+        scanLineTop = frame.top;
+      } else {
+        scanLineTop += SCAN_VELOCITY;// SCAN_VELOCITY可以在属性中设置，默认为15
+      }
+      paint.setColor(getResources().getColor(R.color.color99cc00));
+      paint.setAlpha(SCANNER_ALPHA[scannerAlpha]);
+      scannerAlpha = (scannerAlpha + 1) % SCANNER_ALPHA.length;
+      canvas.drawRect(frame.left+5, scanLineTop-1, frame.right-5, scanLineTop + 3, paint);
+
       
       float scaleX = frame.width() / (float) previewFrame.width();
       float scaleY = frame.height() / (float) previewFrame.height();
@@ -144,6 +166,38 @@ public final class ViewfinderView extends View {
                               radius, paint);
           }
         }
+      }
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+        //画笔
+        Paint pathPaint=new Paint();
+        pathPaint.setStyle(Paint.Style.STROKE);
+        pathPaint.setColor(getResources().getColor(R.color.color99cc00));
+        pathPaint.setStrokeWidth(8f);
+
+        //左上角
+        Path leftPath=new Path();
+        leftPath.moveTo(frame.left+70,frame.top-10);
+        leftPath.lineTo(frame.left-10,frame.top-10);
+        leftPath.lineTo(frame.left-10,frame.top+70);
+        canvas.drawPath(leftPath,pathPaint);
+        //右上角
+        Path rightPath=new Path();
+        rightPath.moveTo(frame.right-70,frame.top-10);
+        rightPath.lineTo(frame.right+10,frame.top-10);
+        rightPath.lineTo(frame.right+10,frame.top+70);
+        canvas.drawPath(rightPath,pathPaint);
+        //左下角
+        Path leftBottomPath=new Path();
+        leftBottomPath.moveTo(frame.left+70,frame.bottom+10);
+        leftBottomPath.lineTo(frame.left-10,frame.bottom+10);
+        leftBottomPath.lineTo(frame.left-10,frame.bottom-70);
+        canvas.drawPath(leftBottomPath,pathPaint);
+        //右下角
+        Path rightBottomPath=new Path();
+        rightBottomPath.moveTo(frame.right+10,frame.bottom-70);
+        rightBottomPath.lineTo(frame.right+10,frame.bottom+10);
+        rightBottomPath.lineTo(frame.right-70,frame.bottom+10);
+        canvas.drawPath(rightBottomPath,pathPaint);
       }
 
       // Request another update at the animation interval, but only repaint the laser line,
